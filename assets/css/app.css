@@ -1,0 +1,96 @@
+body{
+    margin:0;
+}
+*{
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+ul{
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/********/
+.r-none{
+    display: block;
+}
+.r-show{
+    display: none;
+}
+/********/
+header{
+    background-color: #000000;
+    padding: 0.78vw 2.60vw;
+}
+header .flex__box{
+    display:flex;
+    align-items: center;
+}
+header .flex__box .flex-2{
+    width: 100%;
+}
+header .flex__box .flex-2 ul{
+    display: flex;
+}
+header .flex__box .flex-2 ul li{
+    font-size: 0.83vw;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+header .flex__box .flex-2 ul li:not(:last-child){
+    margin-left:auto;
+    margin-right:5.52vw;
+}
+header .flex__box .flex-1 img{
+    width: 100%;
+    max-width:14.58vw;
+}
+#login{
+    background-color: #f9f9f9;
+    padding-top: 8.17vw;
+}
+#login .box{
+    width:100%;
+    background-color: #ffffff;
+    max-width: 27.91vw;
+    margin:auto;
+    padding:3.02vw 6.35vw;
+}
+#login .box form h3{
+    margin:0 0 1.95vw;
+    font-size: 1.82vw;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+}
+#login .box form input:not([type="checkbox"]){
+    width:100%;
+    border-radius:0.52vw;
+    border: solid 1px #b4b4b4;
+    background: transparent;
+    margin-bottom:0.78vw;
+    padding: 0.78vw 1.56vw;
+}
+#login .box form input[type="checkbox"]{
+    margin-bottom:1.2vw;
+}
+#login .box form button{
+    border:0;
+    width:100%;
+    border-radius:0.52vw;
+    padding:0.78vw;
+    background-color: #ffdd00;
+}
