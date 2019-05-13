@@ -6,16 +6,16 @@ body{
     text-rendering: optimizeLegibility;
 }
 @font-face {
-    font-family: 'wu';
-    src: url('../fonts/euclid.woff');
-    src: url('../fonts/euclid.ttf') format('ttf'),
-         url('../fonts/euclid.woff') format('woff');
+    font-family: 'wu light';
+    src: url('../fonts/EuclidWU-Light-WebS.woff');
 }
 @font-face {
     font-family: 'wu bold';
-    src: url('../fonts/Euclid-Bold.woff');
-    src: url('../fonts/Euclid-Bold.ttf') format('ttf'),
-         url('../fonts/Euclid-Bold.woff') format('woff');
+    src: url('../fonts/EuclidWU-Bold-WebS.woff');    
+}
+@font-face {
+    font-family: 'wu regular';
+    src: url('../fonts/EuclidWU-Regular-WebS.woff');    
 }
 ul{
     margin: 0;
@@ -352,7 +352,7 @@ label{
     color: transparent;
 }
 /****/
-@media (max-width:480px){
+@media (max-width:768px){
     #drop-zone{
         height: 36vw;
     }
