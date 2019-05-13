@@ -5,6 +5,18 @@ body{
     box-sizing: border-box;
     text-rendering: optimizeLegibility;
 }
+@font-face {
+    font-family: 'wu';
+    src: url('../fonts/euclid.woff');
+    src: url('../fonts/euclid.ttf') format('ttf'),
+         url('../fonts/euclid.woff') format('woff');
+}
+@font-face {
+    font-family: 'wu bold';
+    src: url('../fonts/Euclid-Bold.woff');
+    src: url('../fonts/Euclid-Bold.ttf') format('ttf'),
+         url('../fonts/Euclid-Bold.woff') format('woff');
+}
 ul{
     margin: 0;
 }
@@ -21,16 +33,74 @@ a{
 .r-show{
     display: none;
 }
+.flex__box{
+    display:flex;
+    align-items: center;
+}
+.flex__box .flex-1{
+    width: 100%;
+}
+.flex__box .flex-2{
+    width: 100%;
+}
+.two-field{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.two-field .field{
+    width: 49%;
+    margin:0 auto;
+}
+.field span.simple{
+    font-size: 1.04vw;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "wu",sans-serif;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000; 
+}
+.wu{
+    font-family: "wu",sans-serif;
+}
+.wu-bold{
+    font-family: "wu bold",sans-serif;
+}
+.bold{
+    font-weight: bold !important;
+}
+.check{
+  font-size: 0.72vw;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "wu",sans-serif;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+.two-field .three-field{
+    width:49%;
+}
+.three-field .flex input{
+    width:30%;
+    display:block;
+    margin: 0 auto 0.78vw;
+}
+.flex{
+    display:flex;
+}
 /********/
 header{
     background-color: #000000;
     padding: 0.78vw 2.60vw;
-}
-header .flex__box{
-    display:flex;
-    align-items: center;
-}
-header .flex__box .flex-2{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
 }
 header .flex__box .flex-2 ul{
@@ -40,6 +110,7 @@ header .flex__box .flex-2 ul li{
     font-size: 0.83vw;
     font-weight: 500;
     font-style: normal;
+    font-family: "wu",sans-serif;
     font-stretch: normal;
     line-height: 1.44;
     letter-spacing: normal;
@@ -54,29 +125,41 @@ header .flex__box .flex-1 img{
     width: 100%;
     max-width:14.58vw;
 }
+#show{
+    position: absolute;
+    top: .8vw;
+    right: 1vw;
+    cursor:pointer;
+}
 #login{
     background-color: #f9f9f9;
     padding-top: 8.17vw;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}   
 #login .box{
     width:100%;
     background-color: #ffffff;
     max-width: 27.91vw;
     margin:auto;
     padding:3.02vw 6.35vw;
+    position: relative;
 }
-#login .box form h3{
+form h3{
     margin:0 0 1.95vw;
     font-size: 1.82vw;
     font-weight: bold;
     font-style: normal;
+    font-family: "wu",sans-serif;
     font-stretch: normal;
     line-height: 1.29;
     letter-spacing: normal;
     text-align: center;
     color: #000000;
 }
-#login .box form input:not([type="checkbox"]){
+input:not([type="checkbox"]),select{
     width:100%;
     border-radius:0.52vw;
     border: solid 1px #b4b4b4;
@@ -84,13 +167,283 @@ header .flex__box .flex-1 img{
     margin-bottom:0.78vw;
     padding: 0.78vw 1.56vw;
 }
-#login .box form input[type="checkbox"]{
+input[type="checkbox"]{
     margin-bottom:1.2vw;
 }
-#login .box form button{
+button{
     border:0;
     width:100%;
     border-radius:0.52vw;
     padding:0.78vw;
     background-color: #ffdd00;
+}
+#login .box form .register{
+    text-align: center;
+}
+#login .box form .forget{
+    text-align: center;
+    margin-top:1.25vw;
+}
+#login .box form a{
+    font-size: 0.83vw;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "wu",sans-serif;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2e2e2e;
+    display: inline-block;
+}
+#login .box form a.space-bottom{
+    margin-bottom: 3.33vw;
+}
+#login .box form button.dark{
+    background-color: #000;
+    color:#fff;
+    margin-top:0.78vw;
+}
+.forget:before {
+    content: '';
+    position: absolute;
+    width: 95%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 2px;
+    background-color: #e2e1e1;
+    bottom: 9.3vw;
+}
+#login .user,#login .pass{
+    position: relative;
+}
+#login .user input{
+    background-image: url("../img/user.png");
+    background-size: 0.98vw;
+    background-position: 1vw .9vw;
+    background-repeat: no-repeat;
+    padding-left:3vw;
+}
+#login .pass input{
+    background-image: url("../img/locked.png");
+    background-size: 0.98vw;
+    background-position: 1vw .9vw;
+    background-repeat: no-repeat;
+    padding-left:3vw;
+}
+/** registro personal **/
+#register{
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8.17vw;
+    justify-content: center;
+}
+#register .box{
+    max-width: 42.39vw;
+    margin:auto;
+    padding: 4.27vw 7.18vw 0 7.18vw;
+    background-color: #fff;
+}
+#register .box-radio{
+    margin-top:1vw;
+}
+/*** radios *****/
+#register .box-radio label.active{
+    background: #000;
+    color: #fff;
+}
+#register .box-radio label{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    color: #000;
+    align-items: center;
+    justify-content: center;
+}
+#register .box-radio label input{
+    height: 0;
+    width: 0;
+    opacity: 0;
+    margin: 0;
+}
+/** end radios **/
+legend{
+    position: absolute;
+    font-size: 12px;
+    right: 5px;
+    bottom: -3px;
+}
+#register .field{
+    position:relative;
+    padding: 0 0.26vw;
+    margin-bottom:0.52vw;
+}
+hr{
+    display: block;
+    margin-bottom:1.52vw;
+}
+label{
+    font-size: 0.83vw;
+    font-weight: 300;
+    font-style: normal;
+    font-family: "wu",sans-serif;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+#drop-zone {
+    width: 100%;
+    height: 8.62vw;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    border: 2px dashed rgba(0,0,0,.3);
+    border-radius: 20px;
+    font-family: Arial;
+    text-align: center;
+    position: relative;
+    display: flex;
+    font-size: 1.04vw;
+    color: rgba(0,0,0,.3);
+    align-items: center;
+    justify-content: center;
+}
+
+    #drop-zone input {
+        position: absolute;
+        cursor: pointer;
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #drop-zone.mouse-over {
+        border: 2px dashed rgba(0,0,0,.5);
+        color: rgba(0,0,0,.5);
+    }
+
+
+/*If you dont want the button*/
+#clickHere {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+    margin-top: 0;
+    line-height: 26px;
+    color: white;
+    font-size: 12px;
+    width: 100px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+}
+/****/
+@media (max-width:480px){
+    #drop-zone{
+        height: 36vw;
+    }
+    select{
+        padding: 4vw;
+    }
+    .flex{
+        display: flex;
+    }
+    .two-field{
+        display: block;
+    }
+    .two-field .three-field,.two-field .field{
+        width: 100%;
+    }
+    #register{
+        padding-top:15.17vw;
+    }
+    .field span.simple{
+        font-size: 3.3vw;
+    }
+    .check{
+        font-size: 4vw;
+    }
+    hr {
+        display: block;
+        margin-bottom: 5.52vw;
+        margin-top: 6vw;
+    }
+    label{
+        font-size: 4.83vw;
+    }
+    #register .box {
+        max-width: 92.39vw;
+        margin: auto;
+        padding: 4.27vw 7.18vw 0 7.18vw;
+        background: #fff;
+    }
+    #login .user input,#login .pass input {        
+        background-size: 4.98vw;
+        background-position: 3vw 3vw;
+        background-repeat: no-repeat;
+        padding-left: 11vw;
+    }
+    .forget:before{
+        bottom:30.5vw;
+    }
+    #login {
+        padding-top: 8.17vw;
+        min-height: 100vh;
+    }
+    
+    header .flex__box .flex-1 img{
+        max-width: 38.58vw;
+    }
+    header .flex__box .flex-2 ul li{
+        font-size: 4.26vw;
+    }
+    #login .box{
+        max-width: 90.91vw;
+        position: relative;
+    }
+    form h3{
+        font-size: 7.82vw;
+        margin: 0 0 7.95vw;
+    }
+    input:not([type="checkbox"]) {
+        width: 100%;
+        border-radius: 0.52vw;
+        border: solid 1px #b4b4b4;
+        background: transparent;
+        margin-bottom: 4.78vw;
+        padding: 3.78vw 2.56vw;
+    }
+    button{
+        padding: 3.78vw;
+    }
+    #login .box form a{
+        font-size: 3.83vw;
+    }
+    #login .box form a.space-bottom{
+        margin-bottom: 11.33vw;
+    }
+    #login .box form .forget{
+        margin-top:5.25vw;
+    }
+    #login .box form input[type="checkbox"] {
+        margin-bottom: 6.2vw;        
+    }
+    #login .box form button.dark{
+        margin-top: 5.78vw; 
+    }
+
 }
